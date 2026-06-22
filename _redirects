@@ -1,0 +1,77 @@
+# Clean URL redirects
+/home /  301
+/index /  301
+/index.html /  301
+
+# Old subfolder URLs -> new flat URLs
+/about/index.html /about.html  301
+/about/ /about.html  301
+/areas/index.html /areas.html  301
+/areas/ /areas.html  301
+/colors/index.html /colors.html  301
+/colors/ /colors.html  301
+/contact/index.html /contact.html  301
+/contact/ /contact.html  301
+/gallery/index.html /gallery.html  301
+/gallery/ /gallery.html  301
+/instant-quote/index.html /instant-quote.html  301
+/instant-quote/ /instant-quote.html  301
+/services/index.html /services.html  301
+/services/ /services.html  301
+/blog/index.html /blog.html  301
+/blog/ /blog.html  301
+
+/areas/blue-springs.html /areas-blue-springs.html  301
+/areas/cameron.html /areas-cameron.html  301
+/areas/carrollton.html /areas-carrollton.html  301
+/areas/chillicothe.html /areas-chillicothe.html  301
+/areas/independence.html /areas-independence.html  301
+/areas/kansas-city.html /areas-kansas-city.html  301
+/areas/kearney.html /areas-kearney.html  301
+/areas/lexington.html /areas-lexington.html  301
+/areas/liberty.html /areas-liberty.html  301
+/areas/odessa.html /areas-odessa.html  301
+/areas/richmond.html /areas-richmond.html  301
+/areas/warrensburg.html /areas-warrensburg.html  301
+
+/blog/basement-epoxy-moisture.html /blog-basement-epoxy-moisture.html  301
+/blog/commercial-epoxy-flooring-kansas-city.html /blog-commercial-epoxy-flooring-kansas-city.html  301
+/blog/epoxy-flooring-kansas-city-climate.html /blog-epoxy-flooring-kansas-city-climate.html  301
+/blog/epoxy-vs-polyaspartic.html /blog-epoxy-vs-polyaspartic.html  301
+/blog/how-to-clean-epoxy-floor.html /blog-how-to-clean-epoxy-floor.html  301
+/blog/why-epoxy-floors-fail.html /blog-why-epoxy-floors-fail.html  301
+/blog/epoxy-flooring-cost.html /blog-epoxy-flooring-cost.html  301
+/epoxy-flooring-cost.html /blog-epoxy-flooring-cost.html  301
+/blog/epoxy-installation-time.html /blog-epoxy-installation-time.html  301
+
+/services/commercial/church-floor-coatings.html /services-commercial-church-floor-coatings.html  301
+/services/commercial/office-floor-coatings.html /services-commercial-office-floor-coatings.html  301
+/services/commercial/restaurant-floor-coatings.html /services-commercial-restaurant-floor-coatings.html  301
+/services/commercial/retail-floor-coatings.html /services-commercial-retail-floor-coatings.html  301
+/services/commercial/school-floor-coatings.html /services-commercial-school-floor-coatings.html  301
+/services/commercial/showroom-floor-coatings.html /services-commercial-showroom-floor-coatings.html  301
+/services/commercial/warehouse-floor-coatings.html /services-commercial-warehouse-floor-coatings.html  301
+/services/floor-types/epoxy-flooring.html /services-floor-types-epoxy-flooring.html  301
+/services/floor-types/flake-system-flooring.html /services-floor-types-flake-system-flooring.html  301
+/services/floor-types/grind-and-seal.html /services-floor-types-grind-and-seal.html  301
+/services/floor-types/metallic-epoxy-flooring.html /services-floor-types-metallic-epoxy-flooring.html  301
+/services/floor-types/polyaspartic-flooring.html /services-floor-types-polyaspartic-flooring.html  301
+/services/floor-types/solid-color-epoxy.html /services-floor-types-solid-color-epoxy.html  301
+/services/flooring-services/baseboard-installation.html /services-flooring-services-baseboard-installation.html  301
+/services/flooring-services/exterior-concrete-sealing.html /services-flooring-services-exterior-concrete-sealing.html  301
+/services/flooring-services/joint-filling.html /services-flooring-services-joint-filling.html  301
+/services/flooring-services/self-leveling.html /services-flooring-services-self-leveling.html  301
+/services/flooring-services/surface-preparation.html /services-flooring-services-surface-preparation.html  301
+/services/residential/basement-floor-coatings.html /services-residential-basement-floor-coatings.html  301
+/services/residential/garage-floor-coatings.html /services-residential-garage-floor-coatings.html  301
+/services/residential/patio-coatings.html /services-residential-patio-coatings.html  301
+
+# Common short URLs
+/garage-floor /services-residential-garage-floor-coatings.html  301
+/basement-epoxy /services-residential-basement-floor-coatings.html  301
+/commercial /services-commercial-warehouse-floor-coatings.html  301
+/quote /contact.html  301
+/price /instant-quote.html  301
+
+# 404 fallback
+/* /index.html  200
