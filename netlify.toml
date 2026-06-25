@@ -1,6 +1,15 @@
 [build]
   publish = "."
 
+# HTML files — never cache so deploys take effect immediately
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# All other files
 [[headers]]
   for = "/*"
   [headers.values]
@@ -8,6 +17,7 @@
     X-Content-Type-Options = "nosniff"
     Cache-Control = "public, max-age=3600"
 
+# Images — long cache is fine since filenames don't change
 [[headers]]
   for = "/*.jpg"
   [headers.values]
