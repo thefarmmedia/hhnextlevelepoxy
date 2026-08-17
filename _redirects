@@ -73,6 +73,64 @@
 /quote /contact.html  301
 /price /instant-quote.html  301
 
-# 404 fallback
-/* /index.html  200
+# Extensionless -> canonical .html (prevents Netlify's implicit clean-URL
+# behavior from serving both /page and /page.html as separate 200 responses)
+/about /about.html  301
+/areas-blue-springs /areas-blue-springs.html  301
+/areas-cameron /areas-cameron.html  301
+/areas-carrollton /areas-carrollton.html  301
+/areas-chillicothe /areas-chillicothe.html  301
+/areas-independence /areas-independence.html  301
+/areas-kansas-city /areas-kansas-city.html  301
+/areas-kearney /areas-kearney.html  301
+/areas-lexington /areas-lexington.html  301
+/areas-liberty /areas-liberty.html  301
+/areas-odessa /areas-odessa.html  301
+/areas-richmond /areas-richmond.html  301
+/areas-warrensburg /areas-warrensburg.html  301
+/areas /areas.html  301
+/blog-basement-epoxy-moisture /blog-basement-epoxy-moisture.html  301
+/blog-commercial-epoxy-flooring-kansas-city /blog-commercial-epoxy-flooring-kansas-city.html  301
+/blog-epoxy-flooring-cost /blog-epoxy-flooring-cost.html  301
+/blog-epoxy-flooring-kansas-city-climate /blog-epoxy-flooring-kansas-city-climate.html  301
+/blog-epoxy-installation-time /blog-epoxy-installation-time.html  301
+/blog-epoxy-over-existing-concrete /blog-epoxy-over-existing-concrete.html  301
+/blog-epoxy-vs-polyaspartic /blog-epoxy-vs-polyaspartic.html  301
+/blog-grind-concrete-before-epoxy /blog-grind-concrete-before-epoxy.html  301
+/blog-how-to-clean-epoxy-floor /blog-how-to-clean-epoxy-floor.html  301
+/blog-why-epoxy-floors-fail /blog-why-epoxy-floors-fail.html  301
+/blog /blog.html  301
+/colors /colors.html  301
+/contact /contact.html  301
+/gallery /gallery.html  301
+/instant-quote /instant-quote.html  301
+/services-commercial-church-floor-coatings /services-commercial-church-floor-coatings.html  301
+/services-commercial-office-floor-coatings /services-commercial-office-floor-coatings.html  301
+/services-commercial-restaurant-floor-coatings /services-commercial-restaurant-floor-coatings.html  301
+/services-commercial-retail-floor-coatings /services-commercial-retail-floor-coatings.html  301
+/services-commercial-school-floor-coatings /services-commercial-school-floor-coatings.html  301
+/services-commercial-showroom-floor-coatings /services-commercial-showroom-floor-coatings.html  301
+/services-commercial-warehouse-floor-coatings /services-commercial-warehouse-floor-coatings.html  301
+/services-floor-types-epoxy-flooring /services-floor-types-epoxy-flooring.html  301
+/services-floor-types-flake-system-flooring /services-floor-types-flake-system-flooring.html  301
+/services-floor-types-grind-and-seal /services-floor-types-grind-and-seal.html  301
+/services-floor-types-metallic-epoxy-flooring /services-floor-types-metallic-epoxy-flooring.html  301
+/services-floor-types-polyaspartic-flooring /services-floor-types-polyaspartic-flooring.html  301
+/services-floor-types-solid-color-epoxy /services-floor-types-solid-color-epoxy.html  301
+/services-flooring-services-baseboard-installation /services-flooring-services-baseboard-installation.html  301
+/services-flooring-services-exterior-concrete-sealing /services-flooring-services-exterior-concrete-sealing.html  301
+/services-flooring-services-joint-filling /services-flooring-services-joint-filling.html  301
+/services-flooring-services-self-leveling /services-flooring-services-self-leveling.html  301
+/services-flooring-services-surface-preparation /services-flooring-services-surface-preparation.html  301
+/services-residential-basement-floor-coatings /services-residential-basement-floor-coatings.html  301
+/services-residential-garage-floor-coatings /services-residential-garage-floor-coatings.html  301
+/services-residential-patio-coatings /services-residential-patio-coatings.html  301
+/services /services.html  301
+
+# www -> non-www / canonical host (defensive; primary domain handling is
+# also managed at the Netlify site/DNS level)
+https://www.hhnextlevelepoxy.com/* https://hhnextlevelepoxy.com/:splat  301!
+
+# 404 fallback — real 404 status instead of masking missing pages as the homepage
+/* /404.html  404
 
