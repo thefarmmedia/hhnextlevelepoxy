@@ -59,8 +59,7 @@ nav{background:var(--pd);border-bottom:3px solid var(--ac);position:sticky;top:0
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,25,38,.88) 0%,rgba(15,25,38,.75) 45%,rgba(15,25,38,.40) 100%)}
 .hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:80px 20px 60px;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start;width:100%}
 .hero-form-wrap{width:380px;max-width:380px;flex-shrink:0}
-.form-card{background:#fff;border-radius:14px;padding:12px;box-shadow:0 20px 60px rgba(0,0,0,.45);width:100%;overflow:hidden}
-.form-card iframe{width:100%!important;max-width:100%!important;min-height:760px!important;border:none!important;border-radius:12px!important;display:block!important;overflow:hidden}
+.form-card{background:#fff;border-radius:14px;padding:26px 24px 22px;box-shadow:0 20px 60px rgba(0,0,0,.45);width:100%;overflow:hidden}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,95,0,.18);border:1px solid rgba(255,95,0,.45);color:var(--ac);font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:18px}
 .hero h1{font-size:clamp(34px,4vw,56px);font-weight:900;color:var(--w);margin-bottom:10px;letter-spacing:-.5px;line-height:1.05;text-shadow:0 2px 12px rgba(0,0,0,.3)}
 .hero-city{font-size:15px;color:rgba(255,255,255,.62);font-weight:500;margin-bottom:22px}
@@ -240,7 +239,6 @@ footer{background:#080f18;padding:60px 20px 26px}
 @media(max-width:1024px){
   .hero-inner{grid-template-columns:1fr!important;gap:30px}
   .hero-form-wrap{width:100%!important;max-width:100%!important;margin:0 auto}
-  .form-card iframe{min-height:850px!important}
   .feat-inner,.about-grid{grid-template-columns:1fr;gap:36px}
   .footer-top{grid-template-columns:1fr 1fr 1fr}
   .proc-steps{grid-template-columns:repeat(3,1fr)}
@@ -755,27 +753,75 @@ footer{background:#080f18;padding:60px 20px 26px}
 </div>
 <!-- QUOTE FORM -->
 <div class="hero-form-wrap">
-<div class="form-card">
-<iframe
-  src="https://api.leadconnectorhq.com/widget/form/ERwSZAq557NMCSTsRg9j"
-  id="inline-ERwSZAq557NMCSTsRg9j"
-  title="HH Next Level Epoxy New Estimate"
-  style="width:100%;min-height:760px;border:none;border-radius:12px;"
-  data-layout="{'id':'INLINE'}"
-  data-trigger-type="alwaysShow"
-  data-trigger-value=""
-  data-activation-type="alwaysActivated"
-  data-activation-value=""
-  data-deactivation-type="neverDeactivate"
-  data-deactivation-value=""
-  data-form-name="HH Next Level Epoxy New Estimate"
-  data-height="760"
-  data-layout-iframe-id="inline-ERwSZAq557NMCSTsRg9j"
-  data-form-id="ERwSZAq557NMCSTsRg9j">
-</iframe>
+<div class="form-card" style="position:relative">
+<span class="form-card-tag">Free Estimate</span>
+<div id="hq_fields">
+<h3>Request a Free Quote</h3>
+<p>Get a fast response — no obligation.</p>
+<div class="ff-row">
+<div class="ff"><label>First Name</label><input id="hq_first" placeholder="First name" type="text"/></div>
+<div class="ff"><label>Last Name</label><input id="hq_last" placeholder="Last name" type="text"/></div>
+</div>
+<div class="ff"><label>Phone</label><input id="hq_phone" placeholder="Phone number" type="tel"/></div>
+<div class="ff"><label>Email</label><input id="hq_email" placeholder="Email address" type="email"/></div>
+<div class="ff-row">
+<div class="ff"><label>ZIP Code</label><input id="hq_zip" maxlength="5" placeholder="ZIP code" type="text"/></div>
+<div class="ff"><label>Project Type</label>
+<select id="hq_type">
+<option value="">Select one</option>
+<option>Garage Floor</option>
+<option>Basement Floor</option>
+<option>Patio / Exterior</option>
+<option>Commercial / Warehouse</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+<p id="hq_error" style="display:none;color:#c0392b;font-size:12px;margin:-2px 0 10px"></p>
+<button class="btn-form" id="hq_btn" onclick="submitHeroQuote()">Get My Free Quote ›</button>
+<p class="form-note">No obligation · We respond within 24 hours</p>
+</div>
+<div id="hq_success" style="display:none;text-align:center;padding:16px 4px">
+<div style="font-size:32px;margin-bottom:8px">✅</div>
+<h3 style="margin-bottom:6px">Request Sent!</h3>
+<p style="margin-bottom:0">We'll be in touch within 24 hours. Need us sooner? Call <a href="tel:8164194287" style="color:var(--p);font-weight:700">(816) 419-4287</a>.</p>
 </div>
 </div>
 </div>
+</div>
+<script>
+async function submitHeroQuote(){
+  var first=document.getElementById('hq_first').value.trim();
+  var last=document.getElementById('hq_last').value.trim();
+  var phone=document.getElementById('hq_phone').value.trim();
+  var email=document.getElementById('hq_email').value.trim();
+  var zip=document.getElementById('hq_zip').value.trim();
+  var type=document.getElementById('hq_type').value;
+  var err=document.getElementById('hq_error');
+  err.style.display='none';
+  if(!first||!last){err.textContent='Please enter your first and last name.';err.style.display='block';return;}
+  if(!phone){err.textContent='Please enter your phone number.';err.style.display='block';return;}
+  if(!email){err.textContent='Please enter your email address.';err.style.display='block';return;}
+  var btn=document.getElementById('hq_btn');
+  btn.disabled=true;btn.textContent='Sending...';
+  try{
+    var params=new URLSearchParams();
+    params.append('firstName',first);params.append('lastName',last);params.append('phone',phone);
+    params.append('email',email);params.append('zip',zip);params.append('project_type',type);
+    params.append('source','hhnextlevelepoxy.com - Homepage Hero Quick Quote');
+    await fetch('https://services.leadconnectorhq.com/hooks/mKWftXzDEgzIfENYYXDA/webhook-trigger/4967e462-883f-4674-b058-c0e6fe28d974',{
+      method:'POST',
+      mode:'no-cors',
+      body:params
+    });
+    document.getElementById('hq_fields').style.display='none';
+    document.getElementById('hq_success').style.display='block';
+  }catch(e){
+    btn.disabled=false;btn.textContent='Get My Free Quote ›';
+    err.textContent='Something went wrong. Please call us at (816) 419-4287.';err.style.display='block';
+  }
+}
+</script>
 </section>
 <!-- TRUST BAR -->
 <div class="trust-bar">
@@ -1222,7 +1268,6 @@ async function submitHomeForm(){
   }
 }
 </script>
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
 <!-- STICKY MOBILE CALL BUTTON -->
 <div id="mob-sticky-call" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:12px 16px 20px;background:linear-gradient(to top,rgba(5,10,18,.98),rgba(5,10,18,.85) 70%,transparent);pointer-events:none">
