@@ -438,7 +438,35 @@ nav{background:var(--pd);border-bottom:3px solid var(--ac);position:sticky;top:0
 </div>
 </div>
 </div>
-<p style="color:var(--tmu);font-size:15px">Fill out the form on the right to request your free estimate.</p></div></div></section>
+<div>
+<div id="contactForm" style="background:var(--w);border:1px solid var(--br);border-radius:var(--rl);padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.05)">
+<h3 style="font-family:Sora,sans-serif;font-size:18px;font-weight:700;margin-bottom:4px">Request Your Free Estimate</h3>
+<p style="font-size:13px;color:var(--tmu);margin-bottom:20px">No obligation, no pressure. We respond within 24 hours.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+<input id="cf_first" placeholder="First name" style="padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit" type="text"/>
+<input id="cf_last" placeholder="Last name" style="padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit" type="text"/>
+</div>
+<input id="cf_phone" placeholder="Phone number" style="width:100%;padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit;margin-bottom:12px" type="tel"/>
+<input id="cf_email" placeholder="Email address" style="width:100%;padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit;margin-bottom:12px" type="email"/>
+<select id="cf_service" style="width:100%;padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit;margin-bottom:12px;color:var(--td);background:var(--w)">
+<option value="">What type of project?</option>
+<option>Garage Floor Coating</option>
+<option>Basement Floor Coating</option>
+<option>Patio / Exterior Coating</option>
+<option>Commercial / Warehouse</option>
+<option>Other</option>
+</select>
+<textarea id="cf_message" placeholder="Square footage, current condition, any questions... (optional)" rows="3" style="width:100%;padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit;margin-bottom:14px;resize:vertical"></textarea>
+<p id="cf_error" style="display:none;color:#c0392b;font-size:13px;margin-bottom:12px"></p>
+<button id="cf_btn" onclick="submitContactForm()" style="width:100%;background:#FF5F00;color:#fff;border:none;padding:14px;border-radius:var(--r);font-family:Sora,sans-serif;font-size:15px;font-weight:800;cursor:pointer">Request My Free Estimate ›</button>
+</div>
+<div id="cf_success" style="display:none;background:var(--w);border:1px solid var(--br);border-radius:var(--rl);padding:32px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.05)">
+<div style="font-size:32px;margin-bottom:10px">✅</div>
+<h3 style="font-family:Sora,sans-serif;font-size:18px;font-weight:700;margin-bottom:6px">Request Sent!</h3>
+<p style="font-size:14px;color:var(--tmu)">Thanks — we'll be in touch within 24 hours to schedule your free on-site estimate. Need us sooner? Call <a href="tel:8164194287" style="color:var(--p);font-weight:700">(816) 419-4287</a>.</p>
+</div>
+</div>
+</div></div></section>
 
 <!-- CALCULATOR CTA BAND -->
 <section style="background:#f0f7ff;border-top:1px solid #dce8f0;border-bottom:1px solid #dce8f0;padding:40px 20px;text-align:center">
