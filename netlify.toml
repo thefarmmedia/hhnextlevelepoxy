@@ -1,13 +1,13 @@
 [build]
   publish = "."
 
-# HTML files — never cache so deploys take effect immediately
+# HTML files — revalidate quickly while allowing browser and edge caching
 [[headers]]
   for = "/*.html"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
-    Cache-Control = "no-cache, no-store, must-revalidate"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # All other files
 [[headers]]
@@ -25,5 +25,10 @@
 
 [[headers]]
   for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+[[headers]]
+  for = "/*.webp"
   [headers.values]
     Cache-Control = "public, max-age=2592000, immutable"
