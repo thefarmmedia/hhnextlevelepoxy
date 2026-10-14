@@ -223,6 +223,7 @@ nav{background:var(--pd);border-bottom:3px solid var(--ac);position:sticky;top:0
 }
 </script>
 
+<style>/* footer: center on mobile */@media(max-width:768px){.ft-top{flex-direction:column;justify-content:center!important;text-align:center}.ft-links{justify-content:center}}</style>
 </head>
 <body>
 <div class="topbar">
@@ -364,9 +365,9 @@ nav{background:var(--pd);border-bottom:3px solid var(--ac);position:sticky;top:0
 
 <footer style="background:#080f18;padding:40px 20px 22px">
 <div style="max-width:1200px;margin:0 auto">
-<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px">
+<div class="ft-top" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px">
 <img alt="HH Next-Level Epoxy" src="logo.png" style="height:44px;width:auto"/>
-<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+<div class="ft-links" style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
 <a href="index.html" style="font-size:13px;color:rgba(255,255,255,.5)">Home</a>
 <a href="services.html" style="font-size:13px;color:rgba(255,255,255,.5)">Services</a>
 <a href="gallery.html" style="font-size:13px;color:rgba(255,255,255,.5)">Gallery</a>
