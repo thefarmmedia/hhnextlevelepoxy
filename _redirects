@@ -131,6 +131,10 @@
 # also managed at the Netlify site/DNS level)
 https://www.hhnextlevelepoxy.com/* https://hhnextlevelepoxy.com/:splat  301!
 
+# Short link for review requests (text/email customers hhnextlevelepoxy.com/review)
+/review https://g.page/r/CckvoWO9GAFmEBM/review  302!
+/reviews https://g.page/r/CckvoWO9GAFmEBM/review  302!
+
 # 404 fallback — real 404 status instead of masking missing pages as the homepage
 /* /404.html  404
 
