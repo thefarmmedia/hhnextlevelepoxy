@@ -79,6 +79,7 @@ nav{background:var(--pd);border-bottom:3px solid var(--ac);position:sticky;top:0
   .ham-btn{display:flex}
 }
 
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr!important;gap:32px!important}}
 </style>
 <meta content="website" property="og:type"/>
 <meta content="https://hhnextlevelepoxy.com/contact.html" property="og:url"/>
@@ -416,7 +417,7 @@ nav{background:var(--pd);border-bottom:3px solid var(--ac);position:sticky;top:0
 <p class="hero-int-desc">Get a free, no-pressure on-site estimate for your Kansas City epoxy floor project. We respond within 24 hours.</p>
 </div></section>
 <section class="section"><div class="section-inner">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start">
+<div class="contact-grid" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:start">
 <div>
 <p class="lbl">Get In Touch</p>
 <h2 class="stitle">Request a Free Estimate</h2>
@@ -448,9 +449,9 @@ nav{background:var(--pd);border-bottom:3px solid var(--ac);position:sticky;top:0
 <div id="contactForm" style="background:var(--w);border:1px solid var(--br);border-radius:var(--rl);padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.05)">
 <h3 style="font-family:Sora,sans-serif;font-size:18px;font-weight:700;margin-bottom:4px">Request Your Free Estimate</h3>
 <p style="font-size:13px;color:var(--tmu);margin-bottom:20px">No obligation, no pressure. We respond within 24 hours.</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-<input id="cf_first" placeholder="First name" style="padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit" type="text"/>
-<input id="cf_last" placeholder="Last name" style="padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit" type="text"/>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-bottom:12px">
+<input id="cf_first" placeholder="First name" style="width:100%;min-width:0;padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit" type="text"/>
+<input id="cf_last" placeholder="Last name" style="width:100%;min-width:0;padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit" type="text"/>
 </div>
 <input id="cf_phone" placeholder="Phone number" style="width:100%;padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit;margin-bottom:12px" type="tel"/>
 <input id="cf_email" placeholder="Email address" style="width:100%;padding:12px 14px;border:1px solid var(--br);border-radius:var(--r);font-size:14px;font-family:inherit;margin-bottom:12px" type="email"/>
