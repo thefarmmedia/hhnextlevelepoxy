@@ -363,6 +363,7 @@ nav{background:var(--pd);border-bottom:3px solid var(--ac);position:sticky;top:0
 .seo-link-grid a{display:block;background:white;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;font-weight:800;color:#273f50;box-shadow:0 2px 10px rgba(15,23,42,.04)}
 .seo-link-grid a:hover{border-color:#E6FF00;color:#E6FF00}
 </style>
+<style>/* footer: center on mobile */@media(max-width:768px){.ft-top{flex-direction:column;justify-content:center!important;text-align:center}.ft-links{justify-content:center}}</style>
 </head>
 <body>
 <div class="topbar">
@@ -495,9 +496,9 @@ nav{background:var(--pd);border-bottom:3px solid var(--ac);position:sticky;top:0
 
 <footer style="background:#080f18;padding:40px 20px 22px">
 <div style="max-width:1200px;margin:0 auto">
-<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px">
+<div class="ft-top" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px">
 <img alt="HH Next-Level Epoxy" src="logo.png" style="height:44px;width:auto"/>
-<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+<div class="ft-links" style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
 <a href="index.html" style="font-size:13px;color:rgba(255,255,255,.5)">Home</a>
 <a href="services.html" style="font-size:13px;color:rgba(255,255,255,.5)">Services</a>
 <a href="gallery.html" style="font-size:13px;color:rgba(255,255,255,.5)">Gallery</a>
