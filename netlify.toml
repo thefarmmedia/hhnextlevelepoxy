@@ -1,6 +1,10 @@
 [build]
   publish = "."
 
+# Keep the existing .html canonical URLs stable after deployment.
+[build.processing.html]
+  pretty_urls = false
+
 # HTML files — revalidate quickly while allowing browser and edge caching
 [[headers]]
   for = "/*.html"
@@ -15,9 +19,9 @@
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
-# Images — long cache is fine since filenames don't change
+# Images have a separate cache policy.
 [[headers]]
   for = "/*.jpg"
   [headers.values]
