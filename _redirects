@@ -1,3 +1,7 @@
+# Recover the retired quote host through the current instant estimate page.
+https://quote.hhnextlevelepoxy.com/* https://hhnextlevelepoxy.com/instant-quote.html  301!
+http://quote.hhnextlevelepoxy.com/* https://hhnextlevelepoxy.com/instant-quote.html  301!
+
 # Clean URL redirects
 /home /  301!
 /index /  301!
