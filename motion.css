@@ -1,0 +1,94 @@
+/* HH Next-Level Epoxy — site motion
+   Loaded on every page. Everything sits behind prefers-reduced-motion,
+   and scroll reveals only apply once motion.js tags an element, so the
+   page reads fine with motion off or JavaScript disabled. */
+
+@keyframes hhUp{from{opacity:0;transform:translate3d(0,26px,0)}to{opacity:1;transform:none}}
+@keyframes hhSlideIn{from{opacity:0;transform:translate3d(40px,0,0)}to{opacity:1;transform:none}}
+@keyframes hhZoomOut{from{transform:scale(1.14)}to{transform:scale(1)}}
+@keyframes hhPop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.15);opacity:1}100%{transform:scale(1)}}
+@keyframes hhShine{0%,72%{transform:translateX(-120%) skewX(-20deg)}100%{transform:translateX(320%) skewX(-20deg)}}
+@keyframes hhGlow{0%,100%{box-shadow:0 0 0 0 rgba(230,255,0,.55)}60%{box-shadow:0 0 0 12px rgba(230,255,0,0)}}
+
+@media (prefers-reduced-motion:no-preference){
+
+  /* ── Hero entrance (plays on load) ── */
+  .hero-inner>div:first-child>*,
+  .hero-inner>p,.hero-inner>h1,.hero-inner>.hero-badges,
+  .hero-int-inner>*,.article-hero-inner>*,.error-hero>*{
+    animation:hhUp .8s cubic-bezier(.2,.7,.2,1) both
+  }
+  :is(.hero-inner>div:first-child,.hero-inner,.hero-int-inner,.article-hero-inner,.error-hero)>:nth-child(2){animation-delay:.08s}
+  :is(.hero-inner>div:first-child,.hero-inner,.hero-int-inner,.article-hero-inner,.error-hero)>:nth-child(3){animation-delay:.16s}
+  :is(.hero-inner>div:first-child,.hero-inner,.hero-int-inner,.article-hero-inner,.error-hero)>:nth-child(4){animation-delay:.24s}
+  :is(.hero-inner>div:first-child,.hero-inner,.hero-int-inner,.article-hero-inner,.error-hero)>:nth-child(5){animation-delay:.32s}
+  :is(.hero-inner>div:first-child,.hero-inner,.hero-int-inner,.article-hero-inner,.error-hero)>:nth-child(6){animation-delay:.4s}
+  :is(.hero-inner>div:first-child,.hero-inner,.hero-int-inner,.article-hero-inner,.error-hero)>:nth-child(n+7){animation-delay:.48s}
+
+  /* checklist ticks pop in one by one */
+  .hero-checks .chk{animation:hhPop .5s cubic-bezier(.2,.7,.2,1) both}
+  .hero-checks li:nth-child(1) .chk{animation-delay:.45s}
+  .hero-checks li:nth-child(2) .chk{animation-delay:.55s}
+  .hero-checks li:nth-child(3) .chk{animation-delay:.65s}
+  .hero-checks li:nth-child(4) .chk{animation-delay:.75s}
+  .hero-checks li:nth-child(5) .chk{animation-delay:.85s}
+
+  /* quote form slides in from the side; slow zoom-out on the hero photo */
+  .hero-form-wrap{animation:hhSlideIn .9s .3s cubic-bezier(.2,.7,.2,1) both}
+  .hero{overflow:hidden}
+  .hero-bg,.hero-int-bg{animation:hhZoomOut 16s ease-out both;will-change:transform}
+  .hero-int:has(.hero-int-bg){overflow:hidden;position:relative}
+
+  /* ── Scroll reveal (motion.js adds .hh-r, then .hh-in when in view) ── */
+  .hh-r{opacity:0;transform:translate3d(0,30px,0);
+    transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);
+    transition-delay:var(--hh-d,0s)}
+  .hh-r.hh-left{transform:translate3d(-44px,0,0)}
+  .hh-r.hh-right{transform:translate3d(44px,0,0)}
+  .hh-r.hh-zoom{transform:scale(.92)}
+  .hh-r.hh-in{opacity:1;transform:none}
+
+  /* process step numbers and icons pop when their card arrives */
+  .hh-seen .proc-num,.hh-seen .why-ico{animation:hhPop .55s .25s cubic-bezier(.2,.7,.2,1) both}
+
+  /* ── Attention: light sweep across the main call-to-action buttons ── */
+  .btn-hero-primary,.cta-band .btn-cta,.btn-primary,.btn-sb,#mob-sticky-call a{position:relative;overflow:hidden;isolation:isolate}
+  .btn-hero-primary::after,.cta-band .btn-cta::after,.btn-primary::after,.btn-sb::after,#mob-sticky-call a::after{
+    content:"";position:absolute;top:0;bottom:0;left:0;width:38%;pointer-events:none;z-index:1;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+    animation:hhShine 5.5s 1.6s ease-in-out infinite
+  }
+  .cta-band .btn-cta::after{background:linear-gradient(90deg,transparent,rgba(230,255,0,.35),transparent)}
+  .form-card-tag{animation:hhGlow 2.6s 1.4s ease-out 3}
+
+  /* ── Hover: lift buttons and cards, zoom photos (mouse/trackpad only) ── */
+  @media (hover:hover){
+    .btn-hero-primary,.btn-hero-calc,.btn-hero-phone,.btn-hero,.btn-ghost,.btn-cta,.btn-cta-g,
+    .btn-sb,.btn-primary,.btn-svc,.btn-color-quote,.nav-cta-btn{
+      transition:transform .22s cubic-bezier(.2,.7,.2,1),box-shadow .22s,background-color .2s,color .2s,border-color .2s
+    }
+    .btn-hero-primary:hover,.btn-hero-calc:hover,.btn-hero-phone:hover,.btn-hero:hover,.btn-ghost:hover,
+    .btn-cta:hover,.btn-cta-g:hover,.btn-sb:hover,.btn-primary:hover,.btn-color-quote:hover,.nav-cta-btn:hover{
+      transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.22)
+    }
+    .rev-card,.proc-step,.stat-box,.info-card,.why-card,.error-card,.faq-item,.sb-info,.sb-cta,
+    .card-grid>a,.hub-grid>a,.area-grid>a,.link-grid>a{
+      transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s,border-color .28s
+    }
+    .rev-card:hover,.proc-step:hover,.stat-box:hover,.info-card:hover,.why-card:hover,.error-card:hover,
+    .card-grid>a:hover,.hub-grid>a:hover,.area-grid>a:hover,.link-grid>a:hover{
+      transform:translateY(-5px);box-shadow:0 16px 36px rgba(17,24,39,.14)
+    }
+    .svc-img img,.gallery-item img,.gallery-card img,.color-img-wrap img,.feat-img img,.about-img-wrap img{
+      transition:transform .7s cubic-bezier(.2,.7,.2,1)
+    }
+    .svc-card:hover .svc-img img,.gallery-item:hover img,.gallery-card:hover img,
+    .color-card:hover .color-img-wrap img,.feat-img:hover img{transform:scale(1.07)}
+    .areas-pills a{transition:transform .2s,background-color .2s,border-color .2s,color .2s}
+    .areas-pills a:hover{transform:translateY(-2px) scale(1.04)}
+  }
+}
+
+/* reading-progress bar on blog posts (motion.js adds it) */
+.hh-progress{position:fixed;top:0;left:0;height:3px;width:100%;background:#E6FF00;
+  transform-origin:0 50%;transform:scaleX(0);z-index:10000;pointer-events:none;box-shadow:0 0 8px rgba(230,255,0,.6)}
